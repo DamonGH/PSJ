@@ -1,14 +1,145 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>下载中心-配色家</title>
+<title>配色家</title>
 <meta name="renderer" content="webkit">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="配色家" />
 <meta name="description" content="" />
 <link rel="stylesheet" type="text/css" href="public/css/reset.css">
 <link rel="stylesheet" type="text/css" href="public/css/head-foot.css">
+<link rel="stylesheet" type="text/css" href="public/swiper/swiper-3.4.2.min.css">
 <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+<script src="public/swiper/swiper-3.4.2.min.js"></script>
+<style type="text/css">
+.wrap{
+	padding-top:70px;
+	padding-bottom: 80px;
+}
+.slogen{
+	position:absolute;
+	top:30%;
+	background-color: rgba(1,1,1,0.56);
+	width: 100%;
+	height:270px;
+	line-height: 270px;
+	color:#fff;
+	font-size: 48px;
+	text-align: center;
+	font-weight: lighter;
+	z-index: 2;
+}
+.introduction{
+	width:1260px;
+	margin:0 auto;
+}
+.intro-title, .partner-title{
+	font-size: 30px;
+	color:#191919;
+	text-align: center;
+	padding:50px;
+	font-weight: lighter;
+}
+.intro-wrap{
+	display: flex;
+	flex-flow:row;
+	justify-content:space-around;
+	padding-bottom: 50px;
+}
+.intro-item{
+	text-align: center;
+	padding-top: 180px;
+	background-repeat: no-repeat;
+	background-position: center 10px;
+	background-size: 165px 165px;
+	transition:0.2s;
+	-moz-transition:0.2s; /* Firefox 4 */
+	-webkit-transition:0.2s; /* Safari and Chrome */
+	-o-transition:0.2s; /* Opera */
+}
+.intro-item:hover{
+	background-size: 175px 175px;
+	background-position: center 5px;
+}
+.intro-item h3{
+	font-size: 24px;
+	color:#3a3a3a;
+	padding-bottom: 25px;
+	transition:0.2s;
+	-moz-transition:0.2s; /* Firefox 4 */
+	-webkit-transition:0.2s; /* Safari and Chrome */
+	-o-transition:0.2s; /* Opera */
+}
+.intro-item:hover h3{
+	padding-top: 4px;
+	padding-bottom: 10px;
+}
+.intro-item p{
+	font-size: 16px;
+	color:#a3a3a3;
+	line-height: 30px;
+}
+.intro-0{
+	background-image: url(public/image/intro_0.png);
+}
+.intro-1{
+	background-image: url(public/image/intro_1.png);
+}
+.intro-2{
+	background-image: url(public/image/intro_2.png);
+}
+.intro-3{
+	background-image: url(public/image/intro_3.png);
+}
+.about-us{
+	width:100%;
+	height:528px;
+	background-image: url(public/image/about.jpg);
+	background-position: center 0;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.about-wrap{
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.56);
+}
+.about-title{
+	height:130px;
+	line-height: 130px;
+	font-size: 30px;
+	text-align: center;
+	color:#fff;
+	font-weight: lighter;
+}
+.about-content{
+	width:1140px;
+	margin:0 auto;
+	font-size: 18px;
+	line-height: 35px;
+	color:#fff;
+	text-indent: 2em;
+}
+.partner-wrap{
+	display:flex;
+	width: 1360px;
+	margin:0 auto;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+.partner-wrap img{
+	margin:15px;
+}
+
+.partner-wrap img:hover{
+	-webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+</style>
 </head>
 <body>
 <!-- head start -->
@@ -22,10 +153,10 @@
 				<a href="index.html" class="selected">首页</a>
 			</li>
 			<li>
-				<a href="index">产品介绍</a>
+				<a href="index.html#introduction">产品介绍</a>
 			</li>
 			<li>
-				<a href="index">关于我们</a>
+				<a href="index.html#about">关于我们</a>
 			</li>
 			<li>
 				<a href="index">合作伙伴</a>
@@ -44,18 +175,93 @@
 </div>
 <!-- head end -->
 
+<!-- <div style="padding-top:70px;"></div> -->
 <!-- wrap start -->
 <div class="wrap">
 	<!-- 轮播图 -->
-	<div class="slide-wrap">
-		
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+				<img src="public/image/slide.jpg">
+	        </div>
+	        <div class="swiper-slide">
+				<img src="public/image/slide.jpg">
+	        </div>
+	        <div class="swiper-slide">
+				<img src="public/image/slide.jpg">
+	        </div>
+	        <div class="swiper-slide">
+				<img src="public/image/slide.jpg">
+	        </div>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination"></div>
+	    <div class="slogen">国际首创家居行业计算机视觉解决方案提供商</div>
 	</div>
 	<!-- 产品介绍 -->
+	<div class="introduction" id="introduction">
+		<div class="intro-title">产品介绍</div>
+		<div class="intro-wrap">
+			<div class="intro-item intro-0">
+				<h3>减少盲目选择</h3>
+				<p>减少前期和家具的色彩搭配的盲目性</p>
+				<p>不再靠凭空想象</p>
+			</div>
+			<div class="intro-item intro-1">
+				<h3>提高客户兴趣</h3>
+				<p>不管是购买装饰面料的家具企业</p>
+				<p>还是销售装饰面料的面料厂家</p>
+				<p>都可以直接通过模拟看最终效果</p>
+			</div>
+			<div class="intro-item intro-2">
+				<h3>提高销售成功率</h3>
+				<p>配色家仿真系统是面料公司销售的工具</p>
+				<p>一套系统 多种用途</p>
+			</div>
+			<div class="intro-item intro-3">
+				<h3>减少打样成本</h3>
+				<p>我们在打样前</p>
+				<p>就可以查看真实产品效果</p>
+				<p>大大减少生产</p>
+			</div>
+		</div>
+	</div>
+	<!-- 关于我们 -->
+	<div class="about-us" id="about">
+		<div class="about-wrap">
+			<div class="about-title">关于我们</div>
+			<div class="about-content">
+				公司技术带头人曾多次参与好莱坞电影特效制作，如《变形金刚3》，《超级战舰》，《星球大战》等，团队经过近两年的努力，先后为万科，东鹏集团，力帆汽车，欧派集团等客户服务，国内最大的CG门户-火星时代和游戏门户。Game798都先后在网站首页幻灯片位置对公司进行了报道，游戏引擎厂商（Unrealengine）把公司DEMO作为其引擎的内容代表作品，刊登在其Features页面的顶部。获得了行业内和客户的普遍认可。
+			</div>
+		</div>
+	</div>
+	<!-- 服务领域 -->
+	<div class="business">
+		
+	</div>
+	<!-- 推荐 -->
 	<div>
 		
 	</div>
-	<!-- 关于我们 -->
+	<!-- 产品视频 -->
 	<div>
+		
+	</div>
+	<!-- 合作伙伴 -->
+	<div class="partner">
+		<div class="partner-title">合作伙伴</div>
+		<div class="partner-wrap">
+			<img src="public/image/partner-0.png">
+			<img src="public/image/partner-1.png">
+			<img src="public/image/partner-2.png">
+			<img src="public/image/partner-3.png">
+			<img src="public/image/partner-4.png">
+			<img src="public/image/partner-5.png">
+			<img src="public/image/partner-6.png">
+			<img src="public/image/partner-7.png">
+			<img src="public/image/partner-8.png">
+			<img src="public/image/partner-9.png">
+		</div>
 		
 	</div>
 </div>
@@ -93,5 +299,17 @@
 	<div class="license">11010502031143号 | 京ICP备16031478号 | Copyright © 2014-2017, RayIon.com, All Rights Reserved</div>
 </div>
 <!-- foot end -->
+<script>        
+var mySwiper = new Swiper('.swiper-container', {
+direction: 'horizontal',
+loop: true,
+autoplay : 3000,
+effect : 'slide',
+
+// 分页器
+pagination: '.swiper-pagination',
+paginationClickable :true,
+})
+</script>
 </body>
 </html>
