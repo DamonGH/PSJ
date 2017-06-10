@@ -33,7 +33,7 @@
 	width:1260px;
 	margin:0 auto;
 }
-.intro-title, .partner-title{
+.intro-title, .partner-title, .recommend-title{
 	font-size: 30px;
 	color:#191919;
 	text-align: center;
@@ -139,6 +139,68 @@
     filter: grayscale(100%);
     filter: gray;
 }
+.recommend .recommend-wrap{
+	width: 1360px;
+	margin:0 auto;
+	overflow: hidden;
+	position:relative;
+	padding-bottom: 70px;
+}
+.recommend .recommend-wrap .dot{
+	bottom:75px;
+}
+.recommend .recommend-wrap .swiper-slide{
+	padding-bottom: 70px;
+}
+.motto, .from{
+	padding:5px 180px;
+}
+.motto p, .from p{
+	font-size: 16px;
+	color:#666;
+	line-height: 35px;
+}
+.motto p::before{
+	content:'“';
+	font-size: 48px;
+	color:#b6b6b6;
+}
+.motto p::after{
+	content:'”';
+	display:inline-block;
+	font-size: 48px;
+	color:#b6b6b6;
+	height:20px;
+	line-height: 35px;
+	overflow:hidden;
+	margin-bottom: -10px;
+}
+.from{
+	text-align: right;
+}
+.from p{
+	display:inline;
+}
+.from p::before{
+	content:"";
+	display:inline-block;
+	width:150px;
+	height:1.5px;
+	background-color: #bbb;
+	margin-bottom: 4px;
+	margin-right: 25px;
+}
+.recommend .dot .swiper-pagination-bullet{
+	width:13px;
+	height:13px;
+	border:2px solid #bfd0d6;
+	border-radius: 50%;
+	background-color: #fff;
+	margin:0 10px;
+}
+.dot .swiper-pagination-bullet-active{
+	background-color: #bfd0d6;
+}
 </style>
 </head>
 <body>
@@ -240,8 +302,38 @@
 		
 	</div>
 	<!-- 推荐 -->
-	<div>
-		
+	<div class="recommend">
+		<div class="recommend-title">推 荐</div>
+		<div class="recommend-wrap">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">
+					<div class="motto">
+						<p> 我们的初创都来自传统行业，在我们一起实体创业过程中，产生了一个共同的价值观：这个行业不应该是这样子，整个家居供应链太长了，配色家的诞生只因这个行业已经到了不得不改变的时候。</p>
+					</div>
+					<div class="from">
+						<p>配色家创始人兼CEO</p>
+					</div>
+		        </div>
+		        <div class="swiper-slide">
+					<div class="motto">
+						<p>他们这群年轻人要去做的是真正的资源节约，供给改革，智慧生产、智慧消费、改变当前家居行业供需环境，助力工厂和消费者的事情。</p>
+					</div>
+					<div class="from">
+						<p>杭州市人力资源社会保障局</p>
+					</div>
+		        </div>
+		        <div class="swiper-slide">
+					<div class="motto">
+						<p>我们的深耕技术研发的动力来自落后的传统行业，将价值回归实业，科技创新落地用户！</p>
+					</div>
+					<div class="from">
+						<p>配色家CTO兼系统架构师</p>
+					</div>
+		        </div>
+		    </div>
+		    <!-- 如果需要分页器 -->
+		    <div class="swiper-pagination dot"></div>
+		</div>
 	</div>
 	<!-- 产品视频 -->
 	<div>
@@ -309,7 +401,18 @@ effect : 'slide',
 // 分页器
 pagination: '.swiper-pagination',
 paginationClickable :true,
-})
+});
+
+var mySwiper = new Swiper('.recommend-wrap', {
+direction: 'horizontal',
+loop: true,
+autoplay : 3000,
+effect : 'slide',
+
+// 分页器
+pagination: '.swiper-pagination',
+paginationClickable :true,
+});
 </script>
 </body>
 </html>
