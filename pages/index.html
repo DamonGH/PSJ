@@ -30,23 +30,25 @@
 	z-index: 2;
 }
 .introduction{
-	width:1260px;
-	margin:0 auto;
+
 }
-.intro-title, .partner-title, .recommend-title, .video-title{
+.intro-title, .partner-title, .recommend-title, .video-title, .business-title{
 	font-size: 30px;
 	color:#191919;
 	text-align: center;
-	padding:50px;
-	font-weight: lighter;
+	padding:70px 50px 50px;
+	/*font-weight: lighter;*/
 }
 .intro-wrap{
+	max-width:1260px;
+	margin:0 auto;
 	display: flex;
 	flex-flow:row;
 	justify-content:space-around;
 	padding-bottom: 50px;
 }
 .intro-item{
+	width:300px;
 	text-align: center;
 	padding-top: 180px;
 	background-repeat: no-repeat;
@@ -105,7 +107,8 @@
 	background-color: rgba(0,0,0,0.56);
 }
 .about-title{
-	height:130px;
+	height:150px;
+	padding-top: 20px;
 	line-height: 130px;
 	font-size: 30px;
 	text-align: center;
@@ -122,16 +125,13 @@
 }
 .partner-wrap{
 	display:flex;
-	width: 1360px;
+	max-width: 1360px;
 	margin:0 auto;
 	flex-flow: row wrap;
 	justify-content: space-between;
 }
 .partner-wrap img{
 	margin:15px;
-}
-
-.partner-wrap img:hover{
 	-webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -139,8 +139,17 @@
     filter: grayscale(100%);
     filter: gray;
 }
+
+.partner-wrap img:hover{
+	-webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+    filter: grayscale(0%);
+    filter: none;
+}
 .recommend .recommend-wrap{
-	width: 1360px;
+	max-width: 1360px;
 	margin:0 auto;
 	overflow: hidden;
 	position:relative;
@@ -185,7 +194,7 @@
 	content:"";
 	display:inline-block;
 	width:150px;
-	height:1.5px;
+	height:1.2px;
 	background-color: #bbb;
 	margin-bottom: 4px;
 	margin-right: 25px;
@@ -198,13 +207,142 @@
 	background-color: #fff;
 	margin:0 10px;
 }
-.dot .swiper-pagination-bullet-active{
+.recommend .dot .swiper-pagination-bullet-active{
 	background-color: #bfd0d6;
+}
+.video-wrap, .business-wrap{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content: space-around;
+	max-width:1260px;
+	margin:0 auto;
 }
 .video-item{
 	width:415px;
 	height:215px;
 	background-image: url(public/image/video-bg.png);
+	background-size: 100% 100%;
+	margin:5px 0;
+	cursor: pointer;
+}
+.item-bg{
+	background-color: rgba(0,0,0,0.4);
+	width:100%;
+	height:100%;
+	line-height: 215px;
+	text-align: center;
+	color:#fff;
+	font-size: 24px;
+	font-weight: lighter;
+	position:relative;
+	display:none;
+}
+.video-item:hover .item-bg{
+	display:block;
+}
+.item-bg img{
+	position:absolute;
+	top:77px;
+	left:65px;
+}
+.business-wrap{
+	padding:0 50px 50px;
+	margin-top: -20px;
+}
+.business-item{
+	width:275px;
+	height:140px;
+	font-size: 24px;
+	color:#333;
+	font-weight: lighter;
+	margin:5px 0px 5px 100px;
+	text-align: center;
+	display:flex;
+	align-items: center;
+}
+.business-item img{
+	margin-right: 20px;
+}
+.business-content{
+	width:100%;
+	height:220px;
+	background-image: url(public/image/business-bg.png);
+	background-repeat: no-repeat;
+	background-size: auto 220px;
+	background-position: center 0;
+}
+.business-bg{
+	background-color: rgba(0,0,0,0.3);
+	width:100%;
+	height:100%;
+}
+.business-content-item-wrap{
+	max-width:1260px;
+	margin:0 auto;
+	display:flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+.business-content-item{
+	color:#fff;
+	margin-left: 40px;
+
+}
+.business-content-item h3{
+	font-size: 30px;
+	font-weight: lighter;
+	padding:40px 0 20px;
+}
+.business-content-item p{
+	font-size: 18px;
+	font-weight: lighter;
+	padding-bottom:5px;
+}
+/*模态框*/
+.bg_z {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+.vd_blk {
+    display: none;
+    width: 1024px;
+    height: 582px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -512px;
+    margin-top: -291px;
+    z-index: 1001;
+    background: #333;
+}
+#swfid {
+    width: 1024px;
+    height: 582px;
+}
+.clb_ctl {
+    width: 36px;
+    height: 36px;
+    background: #333;
+    position: absolute;
+    top: 0;
+    right: -36px;
+}
+.cls_btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transform: rotate(0deg);
+    transition: transform 0.35s ease;
+    cursor: pointer;
+}
+.cls_btn:hover {
+    transform: rotate(180deg);
 }
 </style>
 </head>
@@ -226,10 +364,10 @@
 				<a href="index.html#about">关于我们</a>
 			</li>
 			<li>
-				<a href="index">合作伙伴</a>
+				<a href="index.html#partner">合作伙伴</a>
 			</li>
 			<li>
-				<a href="index">服务领域</a>
+				<a href="index.html#business">服务领域</a>
 			</li>
 			<li>
 				<a href="downloads.html">下载中心</a>
@@ -303,8 +441,64 @@
 		</div>
 	</div>
 	<!-- 服务领域 -->
-	<div class="business">
-		
+	<div class="business" id="business">
+		<div class="business-title">服务领域</div>
+		<div class="business-wrap">
+			<div class="business-item">
+				<img src="public/image/business0.png">
+				装饰企业
+			</div>
+			<div class="business-item">
+				<img src="public/image/business1.png">
+				家居厂商/商城
+			</div>
+			<div class="business-item">
+				<img src="public/image/business2.png">
+				家装机构
+			</div>
+			<div class="business-item">
+				<img src="public/image/business3.png">
+				设计师
+			</div>
+			<div class="business-item">
+				<img src="public/image/business4.png">
+				房地产
+			</div>
+			<div class="business-item">
+				<img src="public/image/business5.png">
+				工业仿真
+			</div>
+		</div>
+		<div class="business-content">
+			<div class="business-bg">
+				<div class="business-content-item-wrap">
+					<div class="business-content-item">
+						<h3>一键配色</h3>
+						<p>后台可存储海量商品数据</p>
+						<p>无限拓展陈列空间</p>
+						<p>增强展示效果</p>
+					</div>
+					<div class="business-content-item">
+						<h3>虚拟配色</h3>
+						<p>虚拟适配</p>
+						<p>提升消费体验</p>
+						<p>促进购买成功率</p>
+					</div>
+					<div class="business-content-item">
+						<h3>提升选色体验</h3>
+						<p>数据同步</p>
+						<p>多平台合作</p>
+						<p>打通线上线下销售渠道</p>
+					</div>
+					<div class="business-content-item">
+						<h3>色彩精准营销</h3>
+						<p>通过数据分析</p>
+						<p>了解消费偏好</p>
+						<p>预测新流行趋势</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- 推荐 -->
 	<div class="recommend">
@@ -347,38 +541,46 @@
 			<div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频一
 				</div>
 			</div>
 			<div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频二
 				</div>
 			</div>
 			<div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频三
 				</div>
 			</div>
 			<div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频亖
 				</div>
 			</div>
 			<div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频Ⅴ
 				</div>
 			</div>
-			<div class="video-item">
+			<!-- <div class="video-item">
 				<div class="item-bg">
 					<img src="public/image/play.png">
+					产品视频陆
 				</div>
-			</div>
+			</div> -->
+			<div style="width:415px"></div>
+			<div style="width:415px"></div>
 		</div>
 		
 	</div>
 	<!-- 合作伙伴 -->
-	<div class="partner">
+	<div class="partner" id="partner">
 		<div class="partner-title">合作伙伴</div>
 		<div class="partner-wrap">
 			<img src="public/image/partner-0.png">
@@ -396,7 +598,12 @@
 	</div>
 </div>
 <!-- wrap end -->
-
+<!-- 模态框 -->
+<div class="bg_z"></div>
+<div class="vd_blk">
+    <div id="swfid"></div>
+    <div class="clb_ctl"><img src="public/image/cls_x.png" width="16" class="cls_btn" ></div>
+</div>
 <!-- foot start -->
 <div class="foot-wrap">
 	<div class="foot-box">
@@ -435,8 +642,6 @@ direction: 'horizontal',
 loop: true,
 autoplay : 3000,
 effect : 'slide',
-
-// 分页器
 pagination: '.swiper-pagination',
 paginationClickable :true,
 });
@@ -446,10 +651,41 @@ direction: 'horizontal',
 loop: true,
 autoplay : 3000,
 effect : 'slide',
-
-// 分页器
 pagination: '.swiper-pagination',
 paginationClickable :true,
+});
+function showVd(vd_key,fg){
+    $(".bg_z").fadeIn(200);
+    $(".vd_blk").fadeIn(200);
+    $("#swfid").html("<video style='width:100%;height:100%;' autoplay controls><source src='http://video.dabanjia.com/jcsp_10.mp4' type='video/mp4'>您的浏览器不支持 video 标签。</video>");
+   //  if(!vd_key)
+   //      vd_key = "";
+   //  for( var i in jsonlist){
+   //      var temp = jsonlist[i];
+		
+   //      if(temp[vd_key] != undefined && temp[vd_key] !=""){
+			// if(!fg){					
+			// 	$(".vd_title").text(temp["name"]);
+			// 	$("#swfid").html("<EMBED src=\""+temp[vd_key]+"\" width=\"1024\" height=\"582\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" allowfullscreen='true' >").attr("title",temp["name"]);
+			// }else{
+			// 	var tmp = "";
+			// 	$("#swfid").html("<video style='width:100%;height:100%;' autoplay controls><source src='http://video.dabanjia.com/jcsp_10.mp4' type='video/mp4'>您的浏览器不支持 video 标签。</video>");
+			// }
+   //          return;
+   //      }else{
+   //          $(".vd_title").text("");
+   //          $("#swfid").removeAttr("title").html("<div class='no_video'>无视频信息！</div>");
+   //      }
+   //  }
+}
+$(".video-item").click(function(){
+    var key_name = $(this)[0].getAttribute("tit_k");
+    showVd(key_name,true);
+});
+$(".cls_btn").click(function(){
+    $(".vd_blk").fadeOut(200);
+    $(".bg_z").fadeOut(200);
+    $("#swfid").empty();
 });
 </script>
 </body>
