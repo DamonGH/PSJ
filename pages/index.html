@@ -129,9 +129,10 @@
 	margin:0 auto;
 	flex-flow: row wrap;
 	justify-content: space-between;
+	align-items:center;
 }
 .partner-wrap img{
-	margin:15px;
+	margin:12px;
 	-webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
@@ -355,7 +356,7 @@
 		</a>
 		<ul class="head-navigation">
 			<li>
-				<a href="index.html" class="selected">首页</a>
+				<a href="index.html#wrap" class="selected">首页</a>
 			</li>
 			<li>
 				<a href="index.html#introduction">产品介绍</a>
@@ -364,10 +365,13 @@
 				<a href="index.html#about">关于我们</a>
 			</li>
 			<li>
-				<a href="index.html#partner">合作伙伴</a>
+				<a href="index.html#business">服务领域</a>
 			</li>
 			<li>
-				<a href="index.html#business">服务领域</a>
+				<a href="index.html#video">产品视频</a>
+			</li>
+			<li>
+				<a href="index.html#partner">合作伙伴</a>
 			</li>
 			<li>
 				<a href="downloads.html">下载中心</a>
@@ -382,7 +386,7 @@
 
 <!-- <div style="padding-top:70px;"></div> -->
 <!-- wrap start -->
-<div class="wrap">
+<div class="wrap" id="wrap">
 	<!-- 轮播图 -->
 	<div class="swiper-container">
 	    <div class="swiper-wrapper">
@@ -399,7 +403,6 @@
 				<img src="public/image/slide.jpg">
 	        </div>
 	    </div>
-	    <!-- 如果需要分页器 -->
 	    <div class="swiper-pagination"></div>
 	    <div class="slogen">国际首创家居行业计算机视觉解决方案提供商</div>
 	</div>
@@ -530,12 +533,11 @@
 					</div>
 		        </div>
 		    </div>
-		    <!-- 如果需要分页器 -->
 		    <div class="swiper-pagination dot"></div>
 		</div>
 	</div>
 	<!-- 产品视频 -->
-	<div class="video">
+	<div class="video" id="video">
 		<div class="video-title">产品视频</div>
 		<div class="video-wrap">
 			<div class="video-item">
@@ -577,7 +579,6 @@
 			<div style="width:415px"></div>
 			<div style="width:415px"></div>
 		</div>
-		
 	</div>
 	<!-- 合作伙伴 -->
 	<div class="partner" id="partner">
@@ -594,7 +595,6 @@
 			<img src="public/image/partner-8.png">
 			<img src="public/image/partner-9.png">
 		</div>
-		
 	</div>
 </div>
 <!-- wrap end -->
@@ -636,7 +636,7 @@
 	<div class="license">11010502031143号 | 京ICP备16031478号 | Copyright © 2014-2017, RayIon.com, All Rights Reserved</div>
 </div>
 <!-- foot end -->
-<script>        
+<script>
 var mySwiper = new Swiper('.swiper-container', {
 direction: 'horizontal',
 loop: true,
@@ -662,9 +662,8 @@ function showVd(vd_key,fg){
    //      vd_key = "";
    //  for( var i in jsonlist){
    //      var temp = jsonlist[i];
-		
    //      if(temp[vd_key] != undefined && temp[vd_key] !=""){
-			// if(!fg){					
+			// if(!fg){
 			// 	$(".vd_title").text(temp["name"]);
 			// 	$("#swfid").html("<EMBED src=\""+temp[vd_key]+"\" width=\"1024\" height=\"582\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" quality=\"high\" allowfullscreen='true' >").attr("title",temp["name"]);
 			// }else{
@@ -686,6 +685,28 @@ $(".cls_btn").click(function(){
     $(".vd_blk").fadeOut(200);
     $(".bg_z").fadeOut(200);
     $("#swfid").empty();
+});
+$(function(){  
+  $('a[href*=#],area[href*=#]').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+      if ($target.length) {
+        var targetOffset = $target.offset().top;
+        $('html,body').animate({
+          scrollTop: targetOffset
+        },
+        1000);
+        return false;
+      }
+    }
+    $(".head-navigation a").eq($(this).index()).addClass("selected").siblings().removeClass('selected');
+  });
+})
+$(document).ready(function(){
+    $(".head-navigation a").click(function(){
+    $(".head-navigation a").eq($(this).index()).addClass("selected").siblings().removeClass('selected');
+    });
 });
 </script>
 </body>
