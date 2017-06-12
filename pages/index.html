@@ -356,22 +356,22 @@
 		</a>
 		<ul class="head-navigation">
 			<li>
-				<a href="index.html#wrap" class="selected">首页</a>
+				<a href="index.html#wrap" class="selected" id="index-tab">首页</a>
 			</li>
 			<li>
-				<a href="index.html#introduction">产品介绍</a>
+				<a href="index.html#introduction" id="introduction-tab">产品介绍</a>
 			</li>
 			<li>
-				<a href="index.html#about">关于我们</a>
+				<a href="index.html#about" id="about-tab">关于我们</a>
 			</li>
 			<li>
-				<a href="index.html#business">服务领域</a>
+				<a href="index.html#business" id="business-tab">服务领域</a>
 			</li>
 			<li>
-				<a href="index.html#video">产品视频</a>
+				<a href="index.html#video" id="video-tab">产品视频</a>
 			</li>
 			<li>
-				<a href="index.html#partner">合作伙伴</a>
+				<a href="index.html#partner" id="partner-tab">合作伙伴</a>
 			</li>
 			<li>
 				<a href="downloads.html">下载中心</a>
@@ -704,6 +704,40 @@ $(function(){
     }
   });
 })
+$(function(){
+    var introduction_height = $("#introduction").offset().top;
+    var about_height = $("#about").offset().top;
+    var business_height = $("#business").offset().top;
+    var video_height = $("#video").offset().top;
+    var partner_height = $("#partner").offset().top;
+    $(window).scroll(function(){
+        var this_scrollTop = $(this).scrollTop()+100;
+        if(this_scrollTop>introduction_height ){
+            $("#introduction-tab").parent().siblings().children().removeClass('selected');
+    		$("#introduction-tab").addClass('selected');
+    		if (this_scrollTop>about_height) {
+		    	$("#about-tab").parent().siblings().children().removeClass('selected');
+				$("#about-tab").addClass('selected');
+				if (this_scrollTop>business_height) {
+			    	$("#business-tab").parent().siblings().children().removeClass('selected');
+					$("#business-tab").addClass('selected');
+					if (this_scrollTop>video_height) {
+				    	$("#video-tab").parent().siblings().children().removeClass('selected');
+						$("#video-tab").addClass('selected');
+						if (this_scrollTop>partner_height) {
+							$("#partner-tab").parent().siblings().children().removeClass('selected');
+							$("#partner-tab").addClass('selected');
+						};
+					};
+				};
+    		};
+        }
+        else if(this_scrollTop<200 ){
+        	$("#index-tab").parent().siblings().children().removeClass('selected');
+    		$("#index-tab").addClass('selected');
+        }
+    });
+});
 </script>
 </body>
 </html>
