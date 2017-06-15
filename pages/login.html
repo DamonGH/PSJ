@@ -44,7 +44,7 @@ input::-webkit-input-placeholder{
 	left:50%;
 	margin-top: -227.5px;
 	margin-left: -242.5px;
-	padding: 65px 40px;
+	padding: 55px 40px;
 	width: 485px;
 	height: 455px;
 	background-color: #fff;
@@ -59,7 +59,7 @@ input::-webkit-input-placeholder{
 	height: 1.5em;
 	margin-bottom: 15px;
 }
-.login-wrap input{
+.login-wrap>input{
 	margin:18px 0;
 	outline: none;
 }
@@ -88,6 +88,35 @@ input[type="button"]:hover{
 input[type="button"]:active{
 	opacity: 1;
 }
+.pw-setting{
+	padding:0 10px;
+}
+.pw-setting, .remeber{
+	display: flex;
+	flex-flow:row;
+	align-items:center;
+	justify-content:space-between;
+
+}
+.remeber input[type="checkbox"]{
+	margin-right: 10px;
+}
+.pw-setting label, .pw-setting a{
+	color: #666;
+	cursor: pointer;
+	font-size: 13px;
+	text-decoration: none;
+}
+.back{
+	text-align: center;
+	color:#999;
+	font-size: 14px;
+	text-decoration: none;
+	margin-top: 20px;
+}
+.back:hover, .pw-setting label:hover, .pw-setting a:hover{
+	color: #33affd;
+}
 </style>
 </head>
 <body>
@@ -97,7 +126,15 @@ input[type="button"]:active{
 		<div class="title">用户登录</div>
 		<input type="text" name="" class="user" placeholder="请输入用户名">
 		<input type="password" name="" class="pw" placeholder="请输入密码">
+		<div class="pw-setting">
+			<div class="remeber">
+				<input type="checkbox" id="remeber-account">
+				<label for="remeber-account">记住账号</label>
+			</div>
+			<a href="" class="forget-pw">忘记密码？</a>
+		</div>
 		<input type="button" name="" value="登 录">
+		<a href="index.html" class="back">返回首页</a>
 	</div>
 	</form>
 </div>
